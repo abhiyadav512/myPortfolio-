@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, Calendar, Code, ExternalLink, Github } from 'lucide-react';
+import { Globe, Calendar, Code, ExternalLink, Github, TrendingUp } from 'lucide-react';
 import { Film, Gamepad2, ShoppingCart } from 'lucide-react';
 
 const projects = [
@@ -11,11 +11,6 @@ const projects = [
             "A modern movie browsing application built with React and Redux. Features a clean, intuitive UI for discovering movies and TV series with advanced filtering and search capabilities.",
         period: "2024",
         technologies: ["React", "Redux", "React Router", "JavaScript", "HTML", "CSS"],
-        notifications: [
-            { icon: "🎬", title: "New movie added", subtitle: "Latest releases updated", time: "2h ago" },
-            { icon: "⭐", title: "User rating", subtitle: "4.8/5 stars", time: "5h ago" },
-            { icon: "👥", title: "Active users", subtitle: "1.2k daily visitors", time: "1 day ago" }
-        ],
         headerColor: "bg-purple-400",
         websiteUrl: "https://movieeshub.netlify.app",
         githubUrl: "https://github.com/abhiyadav512/MovieHub-react-redux-toolkit",
@@ -29,11 +24,6 @@ const projects = [
             "An engaging real-time multiplayer typing game featuring Google authentication, interactive progress bars, and live race updates. Built with the MERN stack and Socket.io for seamless real-time communication between players.",
         period: "2024",
         technologies: ["MongoDB", "Express.js", "React", "Node.js", "Socket.io", "Google Auth", "JavaScript"],
-        notifications: [
-            { icon: "🏁", title: "Race completed", subtitle: "95 WPM achieved!", time: "10m ago" },
-            { icon: "🎮", title: "New player joined", subtitle: "Room #12345", time: "15m ago" },
-            { icon: "🏆", title: "High score", subtitle: "Personal best: 102 WPM", time: "1h ago" }
-        ],
         headerColor: "bg-green-400",
         githubUrl: "https://github.com/abhiyadav512/mern-typeracer",
         websiteUrl: "https://mern-type-racer.vercel.app",
@@ -45,23 +35,40 @@ const projects = [
         subtitle: "Full-stack e-commerce platform",
         description:
             "A comprehensive e-commerce platform built with the PERN stack. Features include an Admin Dashboard, product management, secure auth, and smooth user experience.",
-        period: "2024",
-        technologies: ["PostgreSQL", "Express.js", "React", "Node.js", "JavaScript", "HTML", "CSS"],
-        notifications: [
-            { icon: "🛒", title: "New order placed", subtitle: "Order #ORD-2024-001", time: "30m ago" },
-            { icon: "💰", title: "Payment received", subtitle: "₹2,499.00", time: "45m ago" },
-            { icon: "📦", title: "Product updated", subtitle: "Admin Dashboard", time: "2h ago" }
-        ],
+        period: "2025",
+        technologies: ["PostgreSQL (Prisma)", "Express.js", "React", "Node.js", "JavaScript", "Tailwind CSS", "TanStack Query", "Redux", "Zod"],
         headerColor: "bg-blue-400",
         websiteUrl: "https://oneclothes.vercel.app",
         githubUrl: "https://github.com/abhiyadav512/oneClothes-E-Commerce-Website",
         icon: <ShoppingCart className="w-6 h-6" />
+    },
+    {
+        id: 4,
+        title: "trendyPrompt",
+        subtitle: "AI Prompt Sharing Platform",
+        description:
+            "A modern full-stack platform to share, copy, and explore trending AI prompts. Built for  creators who want quick access to useful prompts across categories.",
+        period: "2025",
+        technologies: [
+            "MongoDB",
+            "Express.js",
+            "React",
+            "Node.js",
+            "JavaScript",
+            "Tailwind CSS",
+            "TanStack Query",
+            "Zod"
+        ],
+        headerColor: "bg-fuchsia-500",
+        websiteUrl: "https://trendy-prompt.vercel.app",
+        githubUrl: "https://github.com/abhiyadav512/trendyPrompt",
+        icon: <TrendingUp className="w-6 h-6" />
     }
+
 ];
 
 const ProjectCard = ({ project, index }) => {
     const [isVisible, setIsVisible] = useState(false);
-    const [showNotifications, setShowNotifications] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => setIsVisible(true), index * 200);
@@ -79,27 +86,9 @@ const ProjectCard = ({ project, index }) => {
                             </div>
                             <span className="text-xs font-medium text-gray-600 dark:text-gray-300">Abhishek Yadav</span>
                         </div>
-                        <button onClick={() => setShowNotifications(!showNotifications)}>
-                            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        </button>
                     </div>
                     <h2 className=" font-bold text-black dark:text-white mb-2">{project.title}</h2>
                     <p className="text-xs text-gray-700 dark:text-gray-300 font-medium">{project.subtitle}</p>
-                </div>
-
-                <div className={`absolute top-4 right-4 space-y-2 transition-all duration-500 ${showNotifications ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-                    {project.notifications.map((note, i) => (
-                        <div key={i} className="bg-white dark:bg-black rounded-sm p-3 shadow-lg border border-gray-100 dark:border-gray-700 min-w-[280px] hover:scale-105 transition-all">
-                            <div className="flex items-center space-x-3">
-                                <div className="w-10 h-10 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-lg">{note.icon}</div>
-                                <div>
-                                    <p className="text-xs font-semibold text-gray-900 dark:text-white">{note.title}</p>
-                                    <p className="text-xs text-gray-600 dark:text-gray-400">{note.subtitle}</p>
-                                    <p className="text-xs text-gray-400 dark:text-gray-500">{note.time}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
                 </div>
             </div>
 

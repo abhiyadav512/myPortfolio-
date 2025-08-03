@@ -1,36 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, Calendar, Code, ExternalLink, Github, TrendingUp } from 'lucide-react';
+import { Globe, Calendar, Code, ExternalLink, Github, TrendingUp, ReceiptText } from 'lucide-react';
 import { Film, Gamepad2, ShoppingCart } from 'lucide-react';
 
 const projects = [
     {
         id: 1,
-        title: "Movie Browser App",
-        subtitle: "Browse movies and TV series",
+        title: "InvoicePay",
+        subtitle: "Stripe-Based Invoicing Platform",
         description:
-            "A modern movie browsing application built with React and Redux. Features a clean, intuitive UI for discovering movies and TV series with advanced filtering and search capabilities.",
-        period: "2024",
-        technologies: ["React", "Redux", "React Router", "JavaScript", "HTML", "CSS"],
-        headerColor: "bg-purple-400",
-        websiteUrl: "https://movieeshub.netlify.app",
-        githubUrl: "https://github.com/abhiyadav512/MovieHub-react-redux-toolkit",
-        icon: <Film className="w-6 h-6" />
+            "A full-stack invoicing platform with OTP login, Stripe-powered payments, PDF invoice generation, and real-time dashboard summaries. Designed for businesses to manage clients and invoices efficiently.",
+        period: "2025",
+        technologies: [
+            "PostgreSQL",
+            "Prisma",
+            "Express.js",
+            "React",
+            "Node.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Stripe API",
+            "ShadCN UI"
+        ],
+        headerColor: "bg-emerald-500",
+        websiteUrl: "https://invoicepay.vercel.app",
+        githubUrl: "https://github.com/abhiyadav512/",
+        icon: <ReceiptText className="w-6 h-6" />
     },
     {
         id: 2,
-        title: "MERN TypeRacer",
-        subtitle: "Real-time multiplayer typing game",
-        description:
-            "An engaging real-time multiplayer typing game featuring Google authentication, interactive progress bars, and live race updates. Built with the MERN stack and Socket.io for seamless real-time communication between players.",
-        period: "2024",
-        technologies: ["MongoDB", "Express.js", "React", "Node.js", "Socket.io", "Google Auth", "JavaScript"],
-        headerColor: "bg-green-400",
-        githubUrl: "https://github.com/abhiyadav512/mern-typeracer",
-        websiteUrl: "https://mern-type-racer.vercel.app",
-        icon: <Gamepad2 className="w-6 h-6" />
-    },
-    {
-        id: 3,
         title: "OneClothes",
         subtitle: "Full-stack e-commerce platform",
         description:
@@ -43,7 +40,7 @@ const projects = [
         icon: <ShoppingCart className="w-6 h-6" />
     },
     {
-        id: 4,
+        id: 3,
         title: "trendyPrompt",
         subtitle: "AI Prompt Sharing Platform",
         description:
@@ -63,7 +60,33 @@ const projects = [
         websiteUrl: "https://trendy-prompt.vercel.app",
         githubUrl: "https://github.com/abhiyadav512/trendyPrompt",
         icon: <TrendingUp className="w-6 h-6" />
-    }
+    },
+    {
+        id: 4,
+        title: "Movie Browser App",
+        subtitle: "Browse movies and TV series",
+        description:
+            "A modern movie browsing application built with React and Redux. Features a clean, intuitive UI for discovering movies and TV series with advanced filtering and search capabilities.",
+        period: "2024",
+        technologies: ["React", "Redux", "React Router", "JavaScript", "HTML", "CSS"],
+        headerColor: "bg-purple-400",
+        websiteUrl: "https://movieeshub.netlify.app",
+        githubUrl: "https://github.com/abhiyadav512/MovieHub-react-redux-toolkit",
+        icon: <Film className="w-6 h-6" />
+    },
+    {
+        id: 5,
+        title: "MERN TypeRacer",
+        subtitle: "Real-time multiplayer typing game",
+        description:
+            "An engaging real-time multiplayer typing game featuring Google authentication, interactive progress bars, and live race updates. Built with the MERN stack and Socket.io for seamless real-time communication between players.",
+        period: "2024",
+        technologies: ["MongoDB", "Express.js", "React", "Node.js", "Socket.io", "Google Auth", "JavaScript"],
+        headerColor: "bg-green-400",
+        githubUrl: "https://github.com/abhiyadav512/mern-typeracer",
+        websiteUrl: "https://mern-type-racer.vercel.app",
+        icon: <Gamepad2 className="w-6 h-6" />
+    },
 
 ];
 
